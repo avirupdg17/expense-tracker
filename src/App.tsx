@@ -1,6 +1,7 @@
 import Card from "./components/UI/Card/Card";
 import ExpenseItem from "./components/ExpenseItem/ExpenseItem";
 import { ExpenseType } from "./types/ExpenseItemType";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 const expenses: ExpenseType[] = [
   {
@@ -26,7 +27,7 @@ const expenses: ExpenseType[] = [
 export default function App() {
   return (
     <Card className=" bg-slate-500 m-2 p-4">
-      <h2 className="text-3xl underline">Let's get started!</h2>
+      <NewExpense />
       {expenses.map((expense) => {
         return (
           <div key={expense.id}>
