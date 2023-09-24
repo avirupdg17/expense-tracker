@@ -4,7 +4,7 @@ import NewExpense from "./components/NewExpense/NewExpense";
 import { useState } from "react";
 import ExpenseList from "./components/ExpenseList/ExpenseList";
 
-const expenses: ExpenseType[] = [
+const DUMMY_EXPENSES: ExpenseType[] = [
   {
     id: "e1",
     title: "Toilet Paper",
@@ -26,11 +26,9 @@ const expenses: ExpenseType[] = [
   },
 ];
 export default function App() {
-  const [expenseList, setExpenseList] = useState([...expenses]);
+  const [expenseList, setExpenseList] = useState([...DUMMY_EXPENSES]);
   const addExpenseHandler = (expense: ExpenseType) => {
-    setExpenseList((prevExpenses: ExpenseType[]) => {
-      return [...prevExpenses, expense];
-    });
+    setExpenseList((prevExpenses: ExpenseType[]) => [expense, ...prevExpenses]);
   };
   return (
     <Card className=" bg-slate-500 m-2 p-4">
