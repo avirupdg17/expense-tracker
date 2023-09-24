@@ -1,8 +1,8 @@
 import Card from "./components/UI/Card/Card";
-import ExpenseItem from "./components/ExpenseItem/ExpenseItem";
 import { ExpenseType } from "./types/ExpenseItemType";
 import NewExpense from "./components/NewExpense/NewExpense";
 import { useState } from "react";
+import ExpenseList from "./components/ExpenseList/ExpenseList";
 
 const expenses: ExpenseType[] = [
   {
@@ -35,13 +35,7 @@ export default function App() {
   return (
     <Card className=" bg-slate-500 m-2 p-4">
       <NewExpense onAddExpenseData={addExpenseHandler} />
-      {expenseList.map((expense) => {
-        return (
-          <div key={expense.id}>
-            <ExpenseItem item={expense}></ExpenseItem>
-          </div>
-        );
-      })}
+      <ExpenseList expenseList={expenseList} />
     </Card>
   );
 }

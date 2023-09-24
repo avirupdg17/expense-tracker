@@ -11,7 +11,6 @@ export default function NewExpense(props: NewExpenseProp) {
       ...enteredExpenseData,
       id: Math.random().toString(),
     };
-    console.log(expenseData);
     props.onAddExpenseData(expenseData);
   };
   return (
