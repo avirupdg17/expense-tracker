@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { ExpenseType } from "../../types/ExpenseItemType";
+
+import "./ExpenseList.css";
+import { ExpenseType } from "../../../types/ExpenseItemType";
+import Card from "../../UI/Card/Card";
 import ExpenseFilter from "../ExpenseFilter/ExpenseFilter";
 import ExpenseItem from "../ExpenseItem/ExpenseItem";
-import Card from "../UI/Card/Card";
-import "./ExpenseList.css";
 
 export default function ExpenseList(props: { expenseList: ExpenseType[] }) {
   const [filteredYear, setFilteredYear] = useState("2020");
@@ -20,10 +21,14 @@ export default function ExpenseList(props: { expenseList: ExpenseType[] }) {
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
-      {filteredExpenses.length === 0 && <p>No Exppenses Found! </p>}
-      {filteredExpenses.map((expense) => (
-        <ExpenseItem item={expense} key={expense.id} />
-      ))}
+      {filteredExpenses.length === 0 && (
+        <p className="expenses-list__fallback">No Expenses Found! </p>
+      )}
+      <ul>
+        {filteredExpenses.map((expense) => (
+          <ExpenseItem item={expense} key={expense.id} />
+        ))}
+      </ul>
     </Card>
   );
 }

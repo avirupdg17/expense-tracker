@@ -1,8 +1,8 @@
+import { useState } from "react";
+import ExpenseList from "./components/Expense/ExpenseList/ExpenseList";
+import NewExpense from "./components/NewExpenses/NewExpense/NewExpense";
 import Card from "./components/UI/Card/Card";
 import { ExpenseType } from "./types/ExpenseItemType";
-import NewExpense from "./components/NewExpense/NewExpense";
-import { useState } from "react";
-import ExpenseList from "./components/ExpenseList/ExpenseList";
 
 const DUMMY_EXPENSES: ExpenseType[] = [
   {

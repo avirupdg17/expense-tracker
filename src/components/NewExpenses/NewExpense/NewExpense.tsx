@@ -1,4 +1,4 @@
-import { ExpenseType } from "../../types/ExpenseItemType";
+import { ExpenseType } from "../../../types/ExpenseItemType";
 import ExpenseForm from "../ExpenseForm/ExpenseForm";
 import "./NewExpense.css";
 interface NewExpenseProp {

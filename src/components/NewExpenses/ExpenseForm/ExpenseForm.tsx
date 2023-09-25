@@ -1,6 +1,6 @@
 import { FormEvent, ChangeEvent, useState } from "react";
 import "./ExpenseForm.css";
-import { ExpenseType } from "../../types/ExpenseItemType";
+import { ExpenseType } from "../../../types/ExpenseItemType";
 
 interface NewExpenseProp {
   onSaveExpenseData: (expenseData: ExpenseType) => void;
