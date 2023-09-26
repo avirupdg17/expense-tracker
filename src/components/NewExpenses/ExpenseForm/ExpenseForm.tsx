@@ -16,7 +16,7 @@ export default function ExpenseForm(props: NewExpenseProp) {
     event.preventDefault();
     const newItem: ExpenseType = {
       ...formData,
-      amount: parseInt(formData.amount),
+      amount: +formData.amount,
       date: new Date(formData.date),
     };
     props.onSaveExpenseData(newItem);

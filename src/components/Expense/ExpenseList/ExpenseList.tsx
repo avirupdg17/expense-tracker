@@ -5,6 +5,7 @@ import { ExpenseType } from "../../../types/ExpenseItemType";
 import Card from "../../UI/Card/Card";
 import ExpenseFilter from "../ExpenseFilter/ExpenseFilter";
 import ExpenseItem from "../ExpenseItem/ExpenseItem";
+import ExpenseChart from "../ExpenseChart/ExpenseChart";
 
 export default function ExpenseList(props: { expenseList: ExpenseType[] }) {
   const [filteredYear, setFilteredYear] = useState("2020");
@@ -21,6 +22,7 @@ export default function ExpenseList(props: { expenseList: ExpenseType[] }) {
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
+      <ExpenseChart expenses={filteredExpenses} />
       {filteredExpenses.length === 0 && (
         <p className="expenses-list__fallback">No Expenses Found! </p>
       )}
